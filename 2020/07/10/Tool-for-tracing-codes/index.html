@@ -5,13 +5,17 @@
   
 
   
-  <title>Jackinreallife</title>
+  <title>Ctags -- Tool for tracing codes | Jackinreallife</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jackinreallife">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="動機較大的 project 往往切割成了非常多的 folders and files,為了方便在 linux 下 trace 大型 project 可以使用 Ctags">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ctags -- Tool for tracing codes">
+<meta property="og:url" content="http://yoursite.com/2020/07/10/Tool-for-tracing-codes/index.html">
 <meta property="og:site_name" content="Jackinreallife">
+<meta property="og:description" content="動機較大的 project 往往切割成了非常多的 folders and files,為了方便在 linux 下 trace 大型 project 可以使用 Ctags">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-10T07:01:42.000Z">
+<meta property="article:modified_time" content="2020-07-10T07:50:35.421Z">
 <meta property="article:author" content="Jack">
 <meta name="twitter:card" content="summary">
   
@@ -62,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Tool-for-tracing-codes" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Tool-for-tracing-codes" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/10/Tool-for-tracing-codes/" class="article-date">
   <time datetime="2020-07-10T07:01:42.000Z" itemprop="datePublished">2020-07-10</time>
@@ -77,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/Tool-for-tracing-codes/">Ctags -- Tool for tracing codes</a>
+    <h1 class="article-title" itemprop="name">
+      Ctags -- Tool for tracing codes
     </h1>
   
 
@@ -87,11 +89,27 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2><p>較大的 project 往往切割成了非常多的 folders and files,<br>為了方便在 linux 下 trace 大型 project 可以使用 <b><l>Ctags</l></b></p>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/10/Tool-for-tracing-codes/#more">Read More</a>
-          </p>
-        
+<a id="more"></a>
+
+<h2 id="功能簡介"><a href="#功能簡介" class="headerlink" title="功能簡介"></a>功能簡介</h2><p><b><l>Ctags</l></b> 是一個可以快速穿梭在不同 files 間的工具，功能大致上<br>就是事先將各個 function 或 structure 做個 tag. 便於後續搜尋查看定義.</p>
+<h2 id="使用-搭配-Vim"><a href="#使用-搭配-Vim" class="headerlink" title="使用(搭配 Vim)"></a>使用(搭配 Vim)</h2><p>首先，安裝 ctags</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install exuberant-ctags</span><br></pre></td></tr></table></figure>
+
+<p>接著進入想建立 tag 的目錄, 一般便是最上層</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /user/projectname</span><br></pre></td></tr></table></figure>
+
+<p>遞迴的為所有子目錄建立 tag</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ctags -R *</span><br></pre></td></tr></table></figure>
+
+<p>便可結合 vim 查詢各 tags</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim -t \&lt;tag&gt;</span><br></pre></td></tr></table></figure>
+<p>或是在 vim 中進行跳躍,可以用</p>
+<pre><code>Ctrl-] - Jump to the tag underneath the cursor
+:ts \&lt;tag&gt; \&lt;RET&gt; - Search for a particular tag
+:tn - Go to the next definition for the last tag
+:tp - Go to the previous definition for the last tag
+:ts - List all of the definitions of the last tag
+Ctrl-t - Jump back up in the tag stack</code></pre>
       
     </div>
     <footer class="article-footer">
@@ -101,100 +119,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-My-First-Post" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/10/My-First-Post/" class="article-date">
-  <time datetime="2020-07-10T06:57:22.000Z" itemprop="datePublished">2020-07-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/My-First-Post/">Markdown testing</a>
-    </h1>
+    <a href="/2020/07/10/My-First-Post/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Markdown testing</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://markdown.tw/#precode" target="_blank" rel="noopener">see here for more</a><br>Markdown examples</p>
-<pre><code>#include &lt;iostream&gt;
-using namespace std;
-int main()
-{
-    //code test;
-}</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/10/My-First-Post/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/My-First-Post/" data-id="ckcfxah3r0001ocu5aljr2wox" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/10/hello-world/" class="article-date">
-  <time datetime="2020-07-10T06:28:15.510Z" itemprop="datePublished">2020-07-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3>
-        
-          <p class="article-more-link">
-            <a href="/2020/07/10/hello-world/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/10/hello-world/" data-id="ckcfxah3u0002ocu5e6dw1jmo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
